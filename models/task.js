@@ -25,7 +25,7 @@ function TaskModel (data){
 		name = data.name;
 	}
 	if (typeof data.completed == 'boolean'){
-		phone = data.phone;
+		completed = data.completed;
 	}
 	if (data.assigned && ObjectId.isValid(data.assigned.toString())){
 		assigned = new ObjectId(data.assigned.toString());
