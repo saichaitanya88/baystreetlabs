@@ -1,0 +1,26 @@
+{
+  "name": "baystreetlabs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "consolidate": "^0.13.1",
+    "express": "^4.13.3",
+    "mongodb": "^2.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/saichaitanya88/baystreetlabs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saichaitanya88/baystreetlabs/issues"
+  },
+  "homepage": "https://github.com/saichaitanya88/baystreetlabs"
+}
