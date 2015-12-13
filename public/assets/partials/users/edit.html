@@ -1,0 +1,29 @@
+<h3>Add/Edit Users</h3>
+<form name="userSearch" class="form-horizontal">
+	<div class="form-group">
+    <label class="col-sm-2 control-label">Email</label>
+    <div class="col-sm-10">
+      <input class="form-control" ng-model="user.email" type="email" name="user.email" required />
+      <p class="text-danger" ng-if="userSearch['user.email'].$error.required && userSearch['user.email'].$dirty">Email is required</p>
+      <p class="text-danger" ng-if="userSearch['user.email'].$error.email && userSearch['user.email'].$dirty">Email format is not correct</p>
+    </div>
+  </div>
+  	<div class="form-group">
+    <label class="col-sm-2 control-label">FirstName</label>
+    <div class="col-sm-10">
+				<input class="form-control" ng-model="user.firstName" type="text" name="user.firstName" />
+    </div>
+  </div>
+  	<div class="form-group">
+    <label class="col-sm-2 control-label">LastName</label>
+    <div class="col-sm-10">
+				<input class="form-control" ng-model="user.lastName" type="text" name="user.lastName" />
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button class="btn btn-primary" type="button" ng-click='Methods.Save()' ng-disabled="userSearch.$invalid">Save</button>
+      <a class="btn btn-default" type="button" ng-href='/#/users'>Cancel</a>
+    </div>
+  </div>	
+</form>

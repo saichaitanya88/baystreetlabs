@@ -1,0 +1,28 @@
+<h3>Tasks</h3>
+<a class="btn btn-default" type="button" ng-href='/#/task/create'>Create Task</a>
+<table class="table">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Assigned</th>
+			<th>Completed</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="task in tasks" ng-class="{ task_incomplete : !task.completed, task_complete : task.completed }">
+			<td><a ng-href='/#/task/update/{{task._id}}'>{{task.name}}</a></td>
+			<td>{{Methods.GetUser(task.assigned)}}</td>
+			<td>
+				<div class="row">
+					<div class="col-sm-9">{{ task.completed }}</div>
+					<div class="col-sm-3"><button class="btn btn-default" type="button" ng-click='Methods.Delete(task._id)'><span class="glyphicon glyphicon-remove"></span></button></div>
+				</div>
+			</td>
+		</tr>
+		<tr ng-if="tasks.length == 0">
+			<th></th>
+			<th>No data to display</th>
+			<th></th>
+		</tr>
+	</tbody>
+</table>

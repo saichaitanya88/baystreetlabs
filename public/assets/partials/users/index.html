@@ -1,0 +1,51 @@
+<h3>Search Users</h3>
+<form name="userSearch">
+	<div class='row'>
+		<div class="col-sm-3">
+			<label class="control-label col-sm-3">Email</label>
+			<div class="col-sm-9">
+				<input class="form-control" ng-model="search.email" type="text" name="search.email" ng-change="Methods.Search()" />
+			</div>
+		</div>
+		<div class="col-sm-3">
+			<label class="control-label col-sm-3">FirstName</label>
+			<div class="col-sm-9">
+				<input class="form-control" ng-model="search.firstName" type="text" name="search.firstName" ng-change="Methods.Search()" />
+			</div>
+		</div>
+		<div class="col-sm-3">
+			<label class="control-label col-sm-3">LastName</label>
+			<div class="col-sm-9">
+				<input class="form-control" ng-model="search.lastName" type="text" name="search.lastName" ng-change="Methods.Search()" />
+			</div>
+		</div>
+		<button class="btn btn-default" type="button" ng-click='Methods.Search()'>Search</button>
+		<a class="btn btn-default" type="button" ng-href='/#/user/create'>Create User</a>
+	</div>
+</form>
+<table class="table">
+	<thead>
+		<tr>
+			<th>Email</th>
+			<th>First Name</th>
+			<th>Last Name</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="user in users">
+			<td><a ng-href='/#/user/update/{{user._id}}'>{{user.email}}</a></td>
+			<td>{{user.firstName}}</td>
+			<td>
+				<div class="row">
+					<div class="col-sm-9">{{user.lastName}}</div>
+					<div class="col-sm-3"><button class="btn btn-default" type="button" ng-click='Methods.Delete(user._id)'><span class="glyphicon glyphicon-remove"></span></button></div>
+				</div>
+			</td>
+		</tr>
+		<tr ng-if="users.length == 0">
+			<th></th>
+			<th>No data to display</th>
+			<th></th>
+		</tr>
+	</tbody>
+</table>

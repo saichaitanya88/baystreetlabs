@@ -1,0 +1,6 @@
+tr.task_incomplete td {
+	color: red;
+}
+tr.task_complete td {
+	color: green;
+}

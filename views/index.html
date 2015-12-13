@@ -1,0 +1,55 @@
+<html ng-app="bayStreetApp">
+	<head>
+		<title>Bay Street Labs Test</title>
+		<link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="/assets/css/site.css">
+		<script src="/assets/js/lib/jQuery.js" type="text/javascript"></script>
+		<script src="/assets/js/lib/bootstrap.js" type="text/javascript"></script>
+		<script src="http://d3js.org/d3.v3.min.js" type="text/javascript"></script>
+		<script src="/assets/js/lib/angular.js" type="text/javascript"></script>
+		<script src="/assets/js/lib/angular-route.js" type="text/javascript"></script>
+		<script src="/assets/js/lib/angular-resource.js" type="text/javascript"></script>
+		<script src="/assets/js/src/app.js" type="text/javascript"></script>
+		<script src="/assets/js/src/controllers.js" type="text/javascript"></script>
+		<script src="/assets/js/src/services.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div 1ng-controller='MiscCtrl'>
+			<nav class="navbar navbar-default">
+			  <div class="container-fluid">
+			    <!-- Brand and toggle get grouped for better mobile display -->
+			    <div class="navbar-header">
+			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			      </button>
+			      <a class="navbar-brand" href="#/">Bay Street Labs Test</a>
+			    </div>
+			    <ul class="nav navbar-nav">
+			    	<li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Menu <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#/users">Users</a></li>
+                <li><a href="#/businesses">Businesses</a></li>
+                <li><a href="#/tasks">Tasks</a></li>
+              </ul>
+            </li>
+          </ul>
+			    <!-- Collect the nav links, forms, and other content for toggling -->
+			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			      <ul class="nav navbar-nav navbar-right">
+			        <li><a target="_blank" href="https://github.com/saichaitanya88/contact_manager.prototype">Github</a></li>
+			      </ul>
+			    </div><!-- /.navbar-collapse -->
+			  </div><!-- /.container-fluid -->
+			</nav>
+		</div>
+		<div class="container-fluid">
+			<div class="view-container">
+					<div ng-view class="view-frame"></div>
+			</div>
+		</div>
+	</body>
+</html>

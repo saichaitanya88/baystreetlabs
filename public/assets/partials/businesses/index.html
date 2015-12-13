@@ -1,0 +1,61 @@
+<h3>Search Businesses</h3>
+<form name="userSearch">
+	<div class='row'>
+		<div class="col-sm-3">
+			<label class="control-label col-sm-3">Name</label>
+			<div class="col-sm-9">
+				<input class="form-control" ng-model="search.name" type="text" name="search.name" ng-change="Methods.Search()" />
+			</div>
+		</div>
+		<div class="col-sm-3">
+			<label class="control-label col-sm-3">Address</label>
+			<div class="col-sm-9">
+				<input class="form-control" ng-model="search.address" type="text" name="search.address" ng-change="Methods.Search()" />
+			</div>
+		</div>
+		<div class="col-sm-2">
+			<label class="control-label col-sm-3">Phone</label>
+			<div class="col-sm-9">
+				<input class="form-control" ng-model="search.phone" type="text" name="search.phone" ng-change="Methods.Search()" />
+			</div>
+		</div>
+		<div class="col-sm-2">
+			<label class="control-label col-sm-3">Owner</label>
+			<div class="col-sm-9">
+				<select class="form-control" ng-model="search.owner" name="search.owner" ng-options="user._id as user.email for user in users" ng-change="Methods.Search()">
+					<option value="">Please Select...</option>
+				</select>
+			</div>
+		</div>
+		<button class="btn btn-default" type="button" ng-click='Methods.Search()'>Search</button>
+		<a class="btn btn-default" type="button" ng-href='/#/business/create'>Create Business</a>
+	</div>
+</form>
+<table class="table">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Address</th>
+			<th>Phone</th>
+			<th>Owner</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="business in businesses">
+			<td><a ng-href='/#/business/update/{{business._id}}'>{{business.name}}</a></td>
+			<td>{{business.address}}</td>
+			<td>{{business.phone}}</td>
+			<td>
+				<div class="row">
+					<div class="col-sm-9">{{ Methods.GetUser(business.owner) }}</div>
+					<div class="col-sm-3"><button class="btn btn-default" type="button" ng-click='Methods.Delete(business._id)'><span class="glyphicon glyphicon-remove"></span></button></div>
+				</div>
+			</td>
+		</tr>
+		<tr ng-if="businesses.length == 0">
+			<th></th>
+			<th>No data to display</th>
+			<th></th>
+		</tr>
+	</tbody>
+</table>
